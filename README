@@ -1,0 +1,31 @@
+This modification to OpenSSH 5.9p1 adds some color to Cisco CLI.
+
+I don't know about you, but I spend way too much time in Cisco's CLI. I looked around 
+for a way to add color to Cisco's outputs, but was unable to find anything.
+
+I finally came up with a patch for OpenSSH's ssh client (the "ssh" command in *nix/BSD/OSX/etc)
+
+The patch causes ssh to filter all incoming data and when it matches certain 
+rules (defined with regex) apply color.
+
+So far I haven't created many "rules". If someone wants to help me do so that would 
+be awesome! Right now it highlights the hostname/config prompts, interface status 
+(up/down/admin down), some interface config commands, and some other stuff. There's 
+potential to do so much though :)
+
+The rules are specified in cisco_color.c. If you make any changes you need to recompile.
+
+While I've been using the ssh client for a while with cisco devices without issues, I obviously take no responsibility for any issues you encounter!
+
+Limitations/Known Issues:
+ - Matching is done per packet. If the data to be matched spans more then one packet 
+then it won't match. This is most noticable if you ssh to a serial console server, as
+the serial output is slow enough to cause SSH to send a packet per character, so nothing 
+ever matches
+
+ - Do not use the modified versions of the other programs in this package (scp, etc) You
+will likely encounter corrupted data.
+
+
+
+

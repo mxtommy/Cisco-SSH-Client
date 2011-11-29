@@ -1,0 +1,30 @@
+To build:
+
+1. Download the OpenSSH Source version 5.9p1 from one of the mirrors listed at http://www.openssh.com/portable.html
+
+wget http://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-5.9p1.tar.gz
+
+2. Apply the patch file to the source
+
+patch  -i cisco_color_ssh.patch
+
+3. Compile the ssh client
+
+./configure
+make ssh
+
+OSX users might need to use "./configure --without-openssl-header-check"
+
+!!!!!!!!!!!!!!!!!!
+Please do NOT use "make install" as it will likely overwrite or at least conflict 
+with the version of SSH already installed.  
+!!!!!!!!!!!!!!!!!!
+
+What I did to install was:
+
+sudo cp ./ssh /usr/local/bin/cssh
+
+This copies the client and renames it so it doesn't conflict.
+
+
+
