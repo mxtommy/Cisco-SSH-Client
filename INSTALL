@@ -1,14 +1,19 @@
 To build:
 
-1. Download the OpenSSH Source version 5.9p1 from one of the mirrors listed at http://www.openssh.com/portable.html
+1. Download and extract the OpenSSH Source version 5.9p1 from one of the mirrors listed at http://www.openssh.com/portable.html
 
 wget http://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-5.9p1.tar.gz
 
-2. Apply the patch file to the source
+2. Apply the patch file to the source of openssh
 
-patch  -i cisco_color_ssh.patch
+patch -i cisco_color_ssh.patch
 
-3. Compile the ssh client
+3. Copy the two new files to the directory with the openssh source
+
+cisco_color.c
+cisco_color.h
+
+4. Compile the ssh client
 
 ./configure
 make ssh

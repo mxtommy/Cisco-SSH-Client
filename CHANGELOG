@@ -1,0 +1,5 @@
+V1.1
+- Added rules for juniper's hostname, and the "show configuration" and "show configuration | compare" commands
+- Moved cisco_color.c and cisco_color.h out of the patch file
+
+V1.0 - Initial release
