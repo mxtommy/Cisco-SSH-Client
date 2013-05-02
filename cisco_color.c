@@ -101,10 +101,10 @@ struct color_match{
 
 
 /* Hostname / config prompts */
-{"^([a-zA-Z0-9_\\-]*)(\\(config)(-[a-z_-]+)(\\))#",{TERM_BRIGHT_GREEN,TERM_RED,TERM_PURPLE,TERM_RED}},
-{"^([a-zA-Z0-9_\\-]*)(\\(config\\))#",{TERM_BRIGHT_GREEN,TERM_RED}},
-{"^([a-zA-Z0-9_-]*)#",{TERM_BRIGHT_GREEN}},
-{"^([a-zA-Z0-9_-]*)>",{TERM_BRIGHT_GREEN}},
+{"^([a-zA-Z0-9\\._\\-]*)(\\(config)(-[a-z_-]+)(\\))#",{TERM_BRIGHT_GREEN,TERM_RED,TERM_PURPLE,TERM_RED}},
+{"^([a-zA-Z0-9\\._\\-]*)(\\(config\\))#",{TERM_BRIGHT_GREEN,TERM_RED}},
+{"^([a-zA-Z0-9\\._-]*)#",{TERM_BRIGHT_GREEN}},
+{"^([a-zA-Z0-9\\._-]*)>",{TERM_BRIGHT_GREEN}},
 
 /* OSPF config */
 {"^(router ospf) ([0-9]+) (vrf) ([a-zA-Z_-]+).$", {TERM_YELLOW, TERM_PURPLE, TERM_YELLOW, TERM_RED}},
