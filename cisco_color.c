@@ -147,12 +147,12 @@ struct color_match{
 {"^\\- (.*)$", {TERM_RED}},
 
 /* Juniper config */
-{"^[ ]*([-a-zA-Z0-9_/]+) ([a-zA-Z0-9_ -/]+) (\\{).$", {TERM_BRIGHT_YELLOW, TERM_PURPLE, TERM_RED}},
+{"^[ ]*([-a-zA-Z0-9_/]+) ([^ ]+) (\\{).$", {TERM_BRIGHT_YELLOW, TERM_PURPLE, TERM_RED}},
 {"^[ ]*([a-zA-Z0-9_ -/]+) (\\{).$", {TERM_BRIGHT_YELLOW, TERM_RED}},
 {"^[ ]*(}).$", {TERM_RED}},
-{"^[ ]*([a-zA-Z0-9/\\._-]+) ([ a-zA-Z0-9/\\._-]+);.$", {TERM_LIGHT_BLUE, TERM_CYAN}},
+{"^[ ]*([a-zA-Z0-9/\\._-]+) ([^ ]+);.$", {TERM_LIGHT_BLUE, TERM_CYAN}},
 {"^[ ]*([a-zA-Z0-9/\\._-]+);.$", {TERM_CYAN}},
-
+{"^[ ]*([a-zA-Z0-9/\\._-]+) (\\[) (.+) (\\]);.$", {TERM_LIGHT_BLUE, TERM_YELLOW, TERM_CYAN, TERM_YELLOW}},
 
 /* Big numbers */
 {" ([0-9]{1,3})([0-9]{3})([0-9]{3})([0-9]{3}) ", {TERM_PURPLE, TERM_CYAN, TERM_BLUE, TERM_CYAN}},
