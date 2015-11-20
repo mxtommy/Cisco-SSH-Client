@@ -115,6 +115,14 @@ struct color_match{
 						{TERM_YELLOW, TERM_PURPLE, TERM_YELLOW, TERM_RED}},
 {"^ (default-information) (originate)(.*)$", { TERM_YELLOW, TERM_RED, TERM_PURPLE}},
 
+/* Cisco "show route-map" */
+{"^route-map (.+), (permit), sequence ([0-9]+)", {TERM_YELLOW, TERM_GREEN, TERM_PURPLE}},
+{"^route-map (.+), (deny), sequence ([0-9]+)", {TERM_YELLOW, TERM_RED, TERM_PURPLE}},
+{"^route-map (.+) (permit) ([0-9]+)", {TERM_YELLOW, TERM_GREEN, TERM_PURPLE}},
+{"^route-map (.+) (deny) ([0-9]+)", {TERM_YELLOW, TERM_RED, TERM_PURPLE}},
+
+
+
 /* BGP Config */
 {"^(router bgp) ([0-9]+).$", {TERM_YELLOW, TERM_PURPLE}},
 {"^ (address-family) ([a-z0-9]+) (vrf) ([a-zA-Z0-9_-]+).$", {TERM_YELLOW, TERM_PURPLE, TERM_YELLOW, TERM_RED}},
@@ -150,9 +158,15 @@ struct color_match{
 {"^[ ]*([-a-zA-Z0-9_/]+) ([^ ]+) (\\{).$", {TERM_BRIGHT_YELLOW, TERM_PURPLE, TERM_RED}},
 {"^[ ]*([a-zA-Z0-9_ -/]+) (\\{).$", {TERM_BRIGHT_YELLOW, TERM_RED}},
 {"^[ ]*(}).$", {TERM_RED}},
-{"^[ ]*([a-zA-Z0-9/\\._-]+) ([^ ]+);.$", {TERM_LIGHT_BLUE, TERM_CYAN}},
+{"^[ ]*([a-zA-Z0-9/\\._-]+ )([^ ]+);.$", {TERM_LIGHT_BLUE, TERM_CYAN}},
 {"^[ ]*([a-zA-Z0-9/\\._-]+);.$", {TERM_CYAN}},
 {"^[ ]*([a-zA-Z0-9/\\._-]+) (\\[) (.+) (\\]);.$", {TERM_LIGHT_BLUE, TERM_YELLOW, TERM_CYAN, TERM_YELLOW}},
+
+
+/* IP Addresses */
+
+{"([0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3})(\\.[0-9]{1,3})(/[0-9]{1,2})", {TERM_WHITE, TERM_WHITE, TERM_RED}},
+{"([0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3})(\\.[0-9]{1,3})", {TERM_WHITE, TERM_WHITE}},
 
 /* Big numbers */
 {" ([0-9]{1,3})([0-9]{3})([0-9]{3})([0-9]{3}) ", {TERM_PURPLE, TERM_CYAN, TERM_BLUE, TERM_CYAN}},
